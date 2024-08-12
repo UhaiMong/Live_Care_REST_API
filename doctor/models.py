@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from patient.models import Patient
 # Create your models here.
 
 class Specialization(models.Model):
@@ -33,3 +34,20 @@ class Doctor(models.Model):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}"
+    
+STAR_CHOICE = [
+        ('⭐','⭐'),
+        ('⭐⭐','⭐⭐'),
+        ('⭐⭐⭐','⭐⭐⭐'),
+        ('⭐⭐⭐⭐','⭐⭐⭐⭐'),
+        ('⭐⭐⭐⭐⭐','⭐⭐⭐⭐⭐')
+    ]
+class Review(models.Model):
+        reviewer = models.ForeignKey(Patient, on_delete=models.CASCADE)
+        doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE)
+        body = models.TextField()
+        created = models.DateTimeField(auto_now_add=True)
+        ratting = models.CharField(choices=STAR_CHOICE, max_length=10)
+
+        def __str__(self):
+            return f"{self.reviewer.user.first_name} - Review to: {self.doctor.user.first_name}"

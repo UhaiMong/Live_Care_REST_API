@@ -8,4 +8,4 @@ class Patient(models.Model):
     image = models.ImageField(upload_to="patient/images")
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name} - {self.mobile_no}"
+        return f"{self.user.first_name} {self.user.last_name}"
