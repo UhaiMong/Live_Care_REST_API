@@ -10,4 +10,5 @@ router.register(r'list', views.PatientViewSet)
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
     path('', include(router.urls)),
+    path('register/', views.UserRegistrationApiView.as_view(),name='register'),
 ]
