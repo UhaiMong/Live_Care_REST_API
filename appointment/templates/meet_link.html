@@ -1,0 +1,14 @@
+<div>
+    <h1>Live Care Hospital</h1>
+    <span style="font-style: italic; font-weight: 700; font-size: 21px; color: #4289FF;">Dear {{user.first_name}}
+        {{user.last_name}},</span>
+    <h3>Please join via Google meet using bellow link:</h3>
+    <h3>You have requested for an online appointment with <span
+            style="font-style: italic; font-weight: 700; font-size: 21px; color: #4289FF;">{{doctor.user.first_name}}
+            {{doctor.user.last_name}}</span></h3>
+    <a href="{{doctor.meet_link}}"
+        target="_blank">{{doctor.meet_link}}</a>
+    <h5 style="margin-top: 30px;">Thanks</h5>
+    <span>Sincerely</span>
+    <h3>Live Care Hospital</h3>
+</div>
