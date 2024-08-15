@@ -31,6 +31,7 @@ SECRET_KEY = 'django-insecure-ey8hnm4_tgr2x1zj$djsn+w@1k16^4qn-g#g5$1krnh(31le%3
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://live-care-rest-api.onrender.com","http://127.0.0.1:8000"]
 
 
 # Application definition
